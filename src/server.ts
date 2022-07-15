@@ -48,7 +48,7 @@ class GraphQLServer {
   private async configApolloServerExpress() {
     const apolloServer = new ApolloServer({
       schema: this.schema,
-      introspection: true,
+      introspection: true
     });
 
     await apolloServer.start();

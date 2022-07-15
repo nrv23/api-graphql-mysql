@@ -6,8 +6,6 @@ const resolversArray = loadFilesSync(path.join(__dirname), {
   extensions: ["ts", "js"],
 });
 
-console.log(resolversArray);
-
 const resolversIndex =  mergeResolvers(resolversArray);
 
 export default resolversIndex;
