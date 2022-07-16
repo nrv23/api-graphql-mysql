@@ -7,7 +7,9 @@ const queryUserResolvers: IResolvers = {
   Query: {
     users: async (_: void, __: unknown) => {
       try {
+        
         return await user.getUsers();
+
       } catch (error) {
         console.log({ error });
       }
@@ -16,11 +18,10 @@ const queryUserResolvers: IResolvers = {
       try {
 
         const response = await user.getUser(+args.id);
-
         return response.length === 0 ? null : response[0];
 
       } catch (error) {
-        console.log({error});
+        console.log({ error });
       }
     },
   },
