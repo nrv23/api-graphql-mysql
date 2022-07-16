@@ -1,0 +1,15 @@
+type User {
+    "Identificado del usuario"
+    id: ID!
+    "Nombre del usuario"
+
+    name: String!
+    "Si es instructor"
+
+    intructor: Boolean!
+    twitter: String
+
+    "Pagina web personal"
+    web: String
+    
+}

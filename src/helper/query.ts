@@ -2,15 +2,19 @@ import connection from '../config/Database';
 
 const executeQuery = (sql: string, params: Array<any> = []) => {
 
-     connection.execute(sql,params,(err,rows,fields) => {
-         if(err) {
-            return Promise.reject(err);
-         }
+    return new Promise((resolve,reject) => {
 
-         return Promise.resolve(rows); 
-
-         // elvalor rows devuelve el resultado de la consulta
-     })
+        connection.execute(sql,params,(err,rows,fields) => {
+            if(err) {
+   
+               
+               reject(err);
+            }
+            resolve(rows); 
+   
+            // elvalor rows devuelve el resultado de la consulta
+        })
+    })
 
 }
 
