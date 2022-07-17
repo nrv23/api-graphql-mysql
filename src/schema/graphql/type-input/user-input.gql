@@ -1,6 +1,6 @@
-type User {
+input UserInput {
     "Identificado del usuario"
-    id: ID!
+    id: ID
     "Nombre del usuario"
 
     name: String!
@@ -11,5 +11,4 @@ type User {
 
     "Pagina web personal"
     web: String
-    languages: [Language!]
 }

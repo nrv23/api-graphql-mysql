@@ -4,6 +4,11 @@ type Query {
   #lista de usuarios  
   users: [User]
   user(id: ID!): User
+
+  # --------------------
+
+  languages: [Language]
+  language(id: ID!): Language
 }
 
 

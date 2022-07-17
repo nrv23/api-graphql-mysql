@@ -1,0 +1,10 @@
+type Mutation {
+
+    addUser(user: UserInput!): String!
+    updateUser(user: UserInput!): String!
+    deleteUser(id: ID!): String!
+
+    addLanguage(language: LanguageInput!): String!
+    updateLanguage(language: LanguageInput!): String!
+    deleteLanguage(id: ID!): String!
+}

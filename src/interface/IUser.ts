@@ -1,8 +1,10 @@
+import { ILanguage } from './ILanguage';
 export interface IUser {
 
     id?: number;
     name: string;
-    intructor: boolean;
+    instructor: boolean;
     twitter?:string;
     web?:string;
+    languages: ILanguage[]
 }

@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
+import dotenv, { DotenvConfigOutput } from "dotenv";
 
-const result = dotenv.config({path: "./src/.env"});
+const result : DotenvConfigOutput = dotenv.config({path: "./src/.env"});
 if (process.env.NODE_ENV !== "production") {
 
     if(result.error) {

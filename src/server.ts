@@ -13,10 +13,11 @@ class GraphQLServer {
     ? Number(process.env.PORT)
     : 6000;
   private schema!: GraphQLSchema;
+  
   constructor(schema: GraphQLSchema) {
     if (schema === undefined) {
       throw new Error(
-        "Necesitamos un schema de GraphQL para trabajar con APIs GraphQL"
+        "Error al obtener el schema"
       );
     }
     this.schema = schema;
@@ -31,7 +32,8 @@ class GraphQLServer {
   }
 
   private initializeEnviroments(): void {
-    if (process.env.NODE_ENV !== "production") { // si el ambiente no es produccion use las variables del archivo .env
+    if (process.env.NODE_ENV !== "production") {
+      // si el ambiente no es produccion use las variables del archivo .env
       const envs = result;
       console.log(envs);
     }
@@ -39,20 +41,17 @@ class GraphQLServer {
 
   private configExpress() {
     this.app = express();
-
     this.app.use(compression());
-
     this.httpServer = createServer(this.app);
   }
 
   private async configApolloServerExpress() {
     const apolloServer = new ApolloServer({
       schema: this.schema,
-      introspection: true
+      introspection: true,
     });
 
     await apolloServer.start();
-
     apolloServer.applyMiddleware({ app: this.app, cors: true });
   }
 
